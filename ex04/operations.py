@@ -1,4 +1,5 @@
 import sys
+import math
 
 
 def operation(arg1: int, arg2: int) -> None:
@@ -15,8 +16,11 @@ def operation(arg1: int, arg2: int) -> None:
     product = arg1 * arg2
     print(f"Product:\t{product}")
     try:
-        quotient = round(arg1 / arg2, 4)
-        print(f"Quotient:\t{quotient}")
+        quotient = arg1 / arg2
+        if math.isinf(arg1 / arg2) is True:
+            print(f"Quotient:\t{round(quotient, 4)}...")
+        else:
+            print(f"Quotient:\t{round(quotient, 4)}")
     except ZeroDivisionError:
         print("Quotient:\tERROR (division by zero)")
     try:
