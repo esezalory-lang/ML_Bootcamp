@@ -1,0 +1,4 @@
+pip list
+pip show -v numpy
+pip uninstall numpy
+pip install numpy

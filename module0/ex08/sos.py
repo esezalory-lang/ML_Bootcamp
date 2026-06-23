@@ -22,20 +22,23 @@ def convert_char(norm: str) -> str:
 
 
 def morse(arguments: list[str]) -> None:
-    word = " ".join(arguments[1:])
+    new_args = []
+    for i in arguments[1:]:
+        new_args.append(i.upper().strip())
+    word = " ".join(new_args)
     morse = ""
-    uppercase = ""
+    build = ""
     for char in word:
         if not (char.isalnum() or char.isspace()):
             print("ERROR")
             return
         if char == " ":
-            uppercase += "/ "
+            build += "/ "
         else:
-            uppercase += convert_char(char.upper())
-            uppercase += " "
-    morse += uppercase
-    print(morse)
+            build += convert_char(char)
+            build += " "
+    morse += build
+    print(morse.strip())
 
 
 if __name__ == "__main__":
