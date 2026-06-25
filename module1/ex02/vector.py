@@ -67,7 +67,7 @@ class Vector():
 
     def __str__(self: "Vector") -> str:
         return f"Vector({self.values})"
-    
+
     def __repr__(self: "Vector") -> str:
         return f"{self.values}"
 

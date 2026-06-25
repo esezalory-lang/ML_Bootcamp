@@ -34,3 +34,6 @@ if __name__ == "__main__":
     cookbook.add_recipe(tourte)
     for i in dessert:
         print(i)
+
+    print("Attributes:")
+    print(tourte.__dict__)
